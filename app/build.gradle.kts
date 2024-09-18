@@ -1,12 +1,11 @@
 plugins {
+    alias(libs.plugins.runique.android.application.compose)
+    alias(libs.plugins.runique.jvm.ktor)
     alias(libs.plugins.mapsplatform.secrets.plugin)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.runique.android.application)
 }
 
 android {
     namespace = "com.example.runique"
-    compileSdk = 34
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -15,21 +14,6 @@ android {
         }
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -38,7 +22,6 @@ android {
 }
 
 dependencies {
-
     // Coil
     implementation(libs.coil.compose)
 
