@@ -18,9 +18,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.auth.presentation.R
-import com.example.core.presentation.designsystem.components.GradientBackground
 import com.example.core.presentation.designsystem.LogoIcon
 import com.example.core.presentation.designsystem.RuniqueTheme
+import com.example.core.presentation.designsystem.components.GradientBackground
 import com.example.core.presentation.designsystem.components.RuniqueActionButton
 import com.example.core.presentation.designsystem.components.RuniqueOutlinedActionButton
 

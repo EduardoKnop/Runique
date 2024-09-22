@@ -36,7 +36,7 @@ fun RuniqueTheme(
         }
     }
 
-    MaterialTheme (
+    MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
         content = content

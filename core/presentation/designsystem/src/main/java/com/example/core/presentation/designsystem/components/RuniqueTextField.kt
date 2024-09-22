@@ -49,7 +49,7 @@ fun RuniqueTextField(
     hint: String,
     title: String?,
     modifier: Modifier = Modifier,
-    error : String? = null,
+    error: String? = null,
     keyboardType: KeyboardType = KeyboardType.Text,
     additionalInfo: String? = null
 ) {
@@ -66,7 +66,7 @@ fun RuniqueTextField(
             verticalAlignment = Alignment.CenterVertically
         ) {
             if (title != null) {
-                Text (
+                Text(
                     text = title,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )

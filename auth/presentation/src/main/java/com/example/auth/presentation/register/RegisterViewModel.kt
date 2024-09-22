@@ -65,6 +65,7 @@ class RegisterViewModel(
                     isPasswordVisible = !state.isPasswordVisible
                 )
             }
+
             else -> Unit
         }
     }
@@ -81,13 +82,16 @@ class RegisterViewModel(
             when (result) {
                 is Result.Error -> {
                     if (result.error == DataError.Network.CONFLICT) {
-                        eventChannel.send(RegisterEvent.Error(
-                            UiText.StringResource(R.string.error_email_exists)
-                        ))
+                        eventChannel.send(
+                            RegisterEvent.Error(
+                                UiText.StringResource(R.string.error_email_exists)
+                            )
+                        )
                     } else {
                         eventChannel.send(RegisterEvent.Error(result.error.asUiText()))
                     }
                 }
+
                 is Result.Success -> {
                     eventChannel.send(RegisterEvent.RegistrationSuccess)
                 }

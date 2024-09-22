@@ -75,7 +75,7 @@ fun RuniqueOutlinedActionButton(
     enabled: Boolean = true,
     onClick: () -> Unit
 ) {
-    OutlinedButton (
+    OutlinedButton(
         onClick = onClick,
         enabled = enabled,
         colors = ButtonDefaults.outlinedButtonColors(
