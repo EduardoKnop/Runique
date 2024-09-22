@@ -52,7 +52,8 @@ fun RegisterScreenRoot(
 ) {
     RegisterScreen(
         state = viewModel.state,
-        onAction = viewModel::onAction
+        onAction = viewModel::onAction,
+        modifier = modifier
     )
 }
 
@@ -64,7 +65,7 @@ fun RegisterScreen(
 ) {
     GradientBackground {
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .verticalScroll(rememberScrollState())
                 .fillMaxSize()
                 .padding(horizontal = 16.dp)
