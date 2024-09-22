@@ -51,7 +51,7 @@ internal fun Project.configureBuildTypes(
 
 private fun BuildType.configureDebugBuildType(apiKey: String) {
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
-    buildConfigField("String", "BASE_URL", "\"https://unique.pl-coding.com:8080\"")
+    buildConfigField("String", "BASE_URL", "\"https://runique.pl-coding.com:8080\"")
 }
 
 private fun BuildType.configureReleaseBuildType(
@@ -59,7 +59,7 @@ private fun BuildType.configureReleaseBuildType(
     apiKey: String
 ) {
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
-    buildConfigField("String", "BASE_URL", "\"https://unique.pl-coding.com:8080\"")
+    buildConfigField("String", "BASE_URL", "\"https://runique.pl-coding.com:8080\"")
 
     isMinifyEnabled = true
     proguardFiles(
