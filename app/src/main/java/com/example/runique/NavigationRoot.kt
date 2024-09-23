@@ -2,7 +2,6 @@ package com.example.runique
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -15,11 +14,11 @@ import com.example.auth.presentation.register.RegisterScreenRoot
 @Composable
 fun NavigationRoot(
     navController: NavHostController,
-    modifier: Modifier = Modifier
+    isLoggedIn: Boolean
 ) {
     NavHost(
         navController = navController,
-        startDestination = "auth"
+        startDestination = if (isLoggedIn) "run" else "auth"
     ) {
         authGraph(navController)
         runGraph(navController)
