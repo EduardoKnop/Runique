@@ -1,10 +1,11 @@
-package com.example.core.data.auth
+package com.example.auth.data
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class AuthInfoSerializable(
+data class LoginResponse(
     val accessToken: String,
     val refreshToken: String,
+    val accessTokenExpirationTimestamp: Long,
     val userId: String
 )

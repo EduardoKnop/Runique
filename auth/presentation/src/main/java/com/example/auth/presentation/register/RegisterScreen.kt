@@ -73,6 +73,7 @@ fun RegisterScreenRoot(
                     R.string.registration_successful,
                     Toast.LENGTH_LONG
                 ).show()
+
                 onSuccessfulRegistration()
             }
         }
@@ -80,7 +81,13 @@ fun RegisterScreenRoot(
 
     RegisterScreen(
         state = viewModel.state,
-        onAction = viewModel::onAction,
+        onAction = { action ->
+            when (action) {
+                RegisterAction.OnLoginClick -> onSignInClick()
+                else -> Unit
+            }
+            viewModel.onAction(action)
+        },
         modifier = modifier
     )
 }
