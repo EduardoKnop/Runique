@@ -55,6 +55,7 @@ internal fun Project.configureBuildTypes(
                         }
                         release {
                             configureReleaseBuildType(commonExtension, apiKey)
+                            isMinifyEnabled = false
                         }
                     }
                 }
@@ -75,7 +76,7 @@ private fun BuildType.configureReleaseBuildType(
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
     buildConfigField("String", "BASE_URL", "\"https://runique.pl-coding.com:8080\"")
 
-    /*isMinifyEnabled = true*/
+    isMinifyEnabled = true
     proguardFiles(
         commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
         "proguard-rules.pro"
