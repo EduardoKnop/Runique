@@ -1,5 +1,7 @@
 package com.example.core.presentation.ui
 
+import java.time.LocalDate
+import java.time.format.TextStyle
 import java.util.Locale
 import kotlin.math.pow
 import kotlin.math.round
@@ -43,4 +45,12 @@ private fun Double.roundToDecimals(decimalCount: Int): Double {
     val factor = 10f.pow(decimalCount)
 
     return round(this * factor) / factor
+}
+
+fun LocalDate.toFormattedMonthYear(): String {
+    return "${this.month.getDisplayName(TextStyle.FULL, Locale.getDefault())} - ${this.year}".replaceFirstChar {
+        if (it.isLowerCase()) it.titlecase(
+            Locale.getDefault()
+        ) else it.toString()
+    }
 }
